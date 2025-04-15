@@ -13,7 +13,8 @@ namespace ComputerPartsStore
 {
     public partial class Form2 : Form
     {
-        string connectionString = "Server=localhost;Database=computerparts_db;Trusted_Connection=True;";
+        string connectionString = "server=localhost;port=3306;user=root;password=admin;database=computerparts_db;";
+
         public Form2()
         {
             InitializeComponent();
@@ -62,7 +63,7 @@ namespace ComputerPartsStore
             dataGridView1.Rows.Add("10", "NIC", "Network Interface Card; enables network connectivity.");
             dataGridView1.Rows.Add("11", "Input Devices", "Devices like keyboard and mouse for user interaction.");
             dataGridView1.Rows.Add("12", "Output Devices", "Devices like monitors and speakers for output.");
-            dataGridView1.Rows.Add("13", "Cases and Enclosures", "The physical case that houses the computer components.");
+            dataGridView1.Rows.Add("13", "Cases and Enclosures",     "The physical case that houses the computer components.");
             dataGridView1.Rows.Add("14", "Peripheral Devices", "Additional devices like printers, webcams, and external drives.");
 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
@@ -81,6 +82,11 @@ namespace ComputerPartsStore
         private void button4_Click(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
