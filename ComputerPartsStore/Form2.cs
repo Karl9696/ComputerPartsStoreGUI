@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace ComputerPartsStore
 {
@@ -46,27 +47,43 @@ namespace ComputerPartsStore
         {
 
 
-            dataGridView1.Columns.Clear();  
-            dataGridView1.Columns.Add("category_id", "Category ID");
-            dataGridView1.Columns.Add("category_name", "Category Name");
-            dataGridView1.Columns.Add("description", "Description");
+            dataGridView1.Rows.Clear();
+            dataGridView1.Columns.Clear();
 
-            dataGridView1.Rows.Add("1", "CPU", "The brain of the computer; handles instructions and processing.");
-            dataGridView1.Rows.Add("2", "GPU", "Graphics card; handles rendering of images, video, and animations.");
-            dataGridView1.Rows.Add("3", "Motherboard", "Main circuit board; connects all internal components.");
-            dataGridView1.Rows.Add("4", "Memory (RAM)", "Temporary storage for active data used by the CPU.");
-            dataGridView1.Rows.Add("5", "Storage", "Devices like HDD and SSD for storing data permanently.");
-            dataGridView1.Rows.Add("6", "PSU", "Power Supply Unit; converts electrical power to required voltages.");
-            dataGridView1.Rows.Add("7", "Cooling Systems", "Components like fans and coolers to maintain safe temperatures.");
-            dataGridView1.Rows.Add("8", "Optical Drives", "Drives that read/write optical discs (CDs, DVDs, Blu-ray).");
-            dataGridView1.Rows.Add("9", "Sound Card", "A device that processes audio for better sound quality.");
-            dataGridView1.Rows.Add("10", "NIC", "Network Interface Card; enables network connectivity.");
-            dataGridView1.Rows.Add("11", "Input Devices", "Devices like keyboard and mouse for user interaction.");
-            dataGridView1.Rows.Add("12", "Output Devices", "Devices like monitors and speakers for output.");
-            dataGridView1.Rows.Add("13", "Cases and Enclosures",     "The physical case that houses the computer components.");
-            dataGridView1.Rows.Add("14", "Peripheral Devices", "Additional devices like printers, webcams, and external drives.");
+            string query = "SELECT category_id, category_name, description FROM product_categories";
 
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            dataGridView1.Columns.Add("category_id", "Category ID");
+                            dataGridView1.Columns.Add("category_name", "Category Name");
+                            dataGridView1.Columns.Add("description", "Description");
+
+                            while (reader.Read())
+                            {
+                                dataGridView1.Rows.Add(
+                                    reader["category_id"].ToString(),
+                                    reader["category_name"].ToString(),
+                                    reader["description"].ToString()
+                                );
+                            }
+                        }
+                    }
+                }
+
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading data: " + ex.Message);
+            }
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -87,6 +104,20 @@ namespace ComputerPartsStore
         private void button5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
         }
     }
 }

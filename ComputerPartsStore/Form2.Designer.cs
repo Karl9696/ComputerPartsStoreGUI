@@ -35,32 +35,46 @@
             this.button4 = new System.Windows.Forms.Button();
             this.LoadData = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.txtProductName = new System.Windows.Forms.TextBox();
+            this.txtCategoryID = new System.Windows.Forms.TextBox();
+            this.txtSupplierID = new System.Windows.Forms.TextBox();
+            this.txtStock = new System.Windows.Forms.TextBox();
+            this.txtPrice = new System.Windows.Forms.TextBox();
+            this.chkIsActive = new System.Windows.Forms.CheckBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtDescription = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(180, 648);
+            this.button1.Location = new System.Drawing.Point(179, 608);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(110, 81);
             this.button1.TabIndex = 6;
             this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(143, 221);
+            this.dataGridView1.Location = new System.Drawing.Point(224, 276);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(732, 401);
+            this.dataGridView1.Size = new System.Drawing.Size(567, 312);
             this.dataGridView1.TabIndex = 11;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(318, 648);
+            this.button2.Location = new System.Drawing.Point(317, 608);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(110, 81);
             this.button2.TabIndex = 12;
@@ -69,7 +83,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(457, 648);
+            this.button3.Location = new System.Drawing.Point(456, 608);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(110, 81);
             this.button3.TabIndex = 13;
@@ -78,7 +92,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(588, 648);
+            this.button4.Location = new System.Drawing.Point(587, 608);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(110, 81);
             this.button4.TabIndex = 14;
@@ -88,7 +102,7 @@
             // 
             // LoadData
             // 
-            this.LoadData.Location = new System.Drawing.Point(724, 648);
+            this.LoadData.Location = new System.Drawing.Point(723, 608);
             this.LoadData.Name = "LoadData";
             this.LoadData.Size = new System.Drawing.Size(110, 81);
             this.LoadData.TabIndex = 15;
@@ -107,11 +121,132 @@
             this.label4.Text = "Categories Page";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
+            // txtProductName
+            // 
+            this.txtProductName.Location = new System.Drawing.Point(91, 235);
+            this.txtProductName.Name = "txtProductName";
+            this.txtProductName.Size = new System.Drawing.Size(116, 22);
+            this.txtProductName.TabIndex = 18;
+            // 
+            // txtCategoryID
+            // 
+            this.txtCategoryID.Location = new System.Drawing.Point(222, 235);
+            this.txtCategoryID.Name = "txtCategoryID";
+            this.txtCategoryID.Size = new System.Drawing.Size(116, 22);
+            this.txtCategoryID.TabIndex = 19;
+            // 
+            // txtSupplierID
+            // 
+            this.txtSupplierID.Location = new System.Drawing.Point(618, 235);
+            this.txtSupplierID.Name = "txtSupplierID";
+            this.txtSupplierID.Size = new System.Drawing.Size(116, 22);
+            this.txtSupplierID.TabIndex = 22;
+            // 
+            // txtStock
+            // 
+            this.txtStock.Location = new System.Drawing.Point(486, 235);
+            this.txtStock.Name = "txtStock";
+            this.txtStock.Size = new System.Drawing.Size(116, 22);
+            this.txtStock.TabIndex = 21;
+            // 
+            // txtPrice
+            // 
+            this.txtPrice.Location = new System.Drawing.Point(352, 235);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(116, 22);
+            this.txtPrice.TabIndex = 20;
+            // 
+            // chkIsActive
+            // 
+            this.chkIsActive.AutoSize = true;
+            this.chkIsActive.Location = new System.Drawing.Point(885, 235);
+            this.chkIsActive.Name = "chkIsActive";
+            this.chkIsActive.Size = new System.Drawing.Size(76, 20);
+            this.chkIsActive.TabIndex = 23;
+            this.chkIsActive.Text = "IsActive";
+            this.chkIsActive.UseVisualStyleBackColor = true;
+            this.chkIsActive.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(126, 216);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 16);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "Name";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(392, 216);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(38, 16);
+            this.label3.TabIndex = 27;
+            this.label3.Text = "Price";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(258, 216);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(62, 16);
+            this.label5.TabIndex = 26;
+            this.label5.Text = "Category";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(640, 216);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(70, 16);
+            this.label6.TabIndex = 29;
+            this.label6.Text = "SupplierID";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(521, 216);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(55, 16);
+            this.label7.TabIndex = 28;
+            this.label7.Text = "Quantity";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(772, 216);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(75, 16);
+            this.label8.TabIndex = 31;
+            this.label8.Text = "Description";
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.Location = new System.Drawing.Point(750, 235);
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(116, 22);
+            this.txtDescription.TabIndex = 30;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1002, 750);
+            this.ClientSize = new System.Drawing.Size(1049, 739);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.txtDescription);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.chkIsActive);
+            this.Controls.Add(this.txtSupplierID);
+            this.Controls.Add(this.txtStock);
+            this.Controls.Add(this.txtPrice);
+            this.Controls.Add(this.txtCategoryID);
+            this.Controls.Add(this.txtProductName);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.LoadData);
             this.Controls.Add(this.button4);
@@ -136,5 +271,18 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button LoadData;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtProductName;
+        private System.Windows.Forms.TextBox txtCategoryID;
+        private System.Windows.Forms.TextBox txtSupplierID;
+        private System.Windows.Forms.TextBox txtStock;
+        private System.Windows.Forms.TextBox txtPrice;
+        private System.Windows.Forms.CheckBox chkIsActive;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtDescription;
     }
 }

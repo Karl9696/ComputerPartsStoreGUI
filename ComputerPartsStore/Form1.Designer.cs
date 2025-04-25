@@ -50,7 +50,7 @@
             // 
             // ProductCategories
             // 
-            this.ProductCategories.Location = new System.Drawing.Point(398, 89);
+            this.ProductCategories.Location = new System.Drawing.Point(398, 201);
             this.ProductCategories.Name = "ProductCategories";
             this.ProductCategories.Size = new System.Drawing.Size(184, 91);
             this.ProductCategories.TabIndex = 1;
@@ -70,7 +70,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(398, 203);
+            this.button3.Location = new System.Drawing.Point(398, 95);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(184, 91);
             this.button3.TabIndex = 2;

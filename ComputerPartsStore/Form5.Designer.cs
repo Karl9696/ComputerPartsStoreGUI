@@ -33,9 +33,9 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.SupplierTable = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SupplierTable)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -57,6 +57,7 @@
             this.LoadData.TabIndex = 42;
             this.LoadData.Text = "Load";
             this.LoadData.UseVisualStyleBackColor = true;
+            this.LoadData.Click += new System.EventHandler(this.LoadData_Click);
             // 
             // button4
             // 
@@ -85,15 +86,16 @@
             this.button2.Text = "Edit";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // SupplierTable
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(233, 166);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(592, 331);
-            this.dataGridView1.TabIndex = 38;
+            this.SupplierTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.SupplierTable.Location = new System.Drawing.Point(233, 166);
+            this.SupplierTable.Name = "SupplierTable";
+            this.SupplierTable.RowHeadersWidth = 51;
+            this.SupplierTable.RowTemplate.Height = 24;
+            this.SupplierTable.Size = new System.Drawing.Size(592, 331);
+            this.SupplierTable.TabIndex = 38;
+            this.SupplierTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // button1
             // 
@@ -114,11 +116,12 @@
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.SupplierTable);
             this.Controls.Add(this.button1);
             this.Name = "Form5";
             this.Text = "Suppliers";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.Form5_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.SupplierTable)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -131,7 +134,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView SupplierTable;
         private System.Windows.Forms.Button button1;
     }
 }
