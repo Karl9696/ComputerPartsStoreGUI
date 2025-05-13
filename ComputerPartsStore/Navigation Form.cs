@@ -71,5 +71,11 @@ namespace ComputerPartsStore
             Form6 form6 = new Form6();
             form6.Show();
         }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            UserForm UserForm = new UserForm();
+            UserForm.Show();
+        }
     }
 }

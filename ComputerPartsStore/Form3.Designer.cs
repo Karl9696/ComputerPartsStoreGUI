@@ -54,11 +54,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(362, 80);
+            this.label4.Font = new System.Drawing.Font("Palatino Linotype", 25.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(379, 83);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label4.Size = new System.Drawing.Size(293, 48);
+            this.label4.Size = new System.Drawing.Size(291, 56);
             this.label4.TabIndex = 29;
             this.label4.Text = "Products Page";
             this.label4.Click += new System.EventHandler(this.label4_Click);
