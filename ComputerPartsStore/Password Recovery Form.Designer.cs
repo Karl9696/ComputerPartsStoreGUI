@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.txtusername = new System.Windows.Forms.TextBox();
+            this.txtemail = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.Label = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -39,14 +39,15 @@
             this.ResetPassword = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // txtusername
+            // txtemail
             // 
-            this.txtusername.Location = new System.Drawing.Point(292, 118);
-            this.txtusername.Name = "txtusername";
-            this.txtusername.Size = new System.Drawing.Size(186, 22);
-            this.txtusername.TabIndex = 0;
+            this.txtemail.Location = new System.Drawing.Point(292, 118);
+            this.txtemail.Name = "txtemail";
+            this.txtemail.Size = new System.Drawing.Size(186, 22);
+            this.txtemail.TabIndex = 0;
             // 
             // contextMenuStrip1
             // 
@@ -57,11 +58,11 @@
             // Label
             // 
             this.Label.AutoSize = true;
-            this.Label.Location = new System.Drawing.Point(346, 99);
+            this.Label.Location = new System.Drawing.Point(361, 99);
             this.Label.Name = "Label";
-            this.Label.Size = new System.Drawing.Size(70, 16);
+            this.Label.Size = new System.Drawing.Size(41, 16);
             this.Label.TabIndex = 2;
-            this.Label.Text = "Username";
+            this.Label.Text = "Email";
             // 
             // button1
             // 
@@ -126,11 +127,22 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "New Password";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(659, 403);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(129, 35);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Return to Login";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Password_Recovery_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.ResetPassword);
@@ -139,7 +151,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Label);
-            this.Controls.Add(this.txtusername);
+            this.Controls.Add(this.txtemail);
             this.Name = "Password_Recovery_Form";
             this.Text = "Password_Recovery_Form";
             this.Load += new System.EventHandler(this.Password_Recovery_Form_Load);
@@ -150,7 +162,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtusername;
+        private System.Windows.Forms.TextBox txtemail;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Label Label;
         private System.Windows.Forms.Button button1;
@@ -160,5 +172,6 @@
         private System.Windows.Forms.Button ResetPassword;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button2;
     }
 }

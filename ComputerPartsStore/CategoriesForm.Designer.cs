@@ -48,6 +48,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
+            this.Dashboard = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtsearch = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -114,7 +118,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(350, 104);
+            this.label4.Location = new System.Drawing.Point(356, 31);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(330, 48);
             this.label4.TabIndex = 16;
@@ -229,11 +233,52 @@
             this.txtDescription.Size = new System.Drawing.Size(116, 22);
             this.txtDescription.TabIndex = 30;
             // 
+            // Dashboard
+            // 
+            this.Dashboard.Location = new System.Drawing.Point(909, 666);
+            this.Dashboard.Name = "Dashboard";
+            this.Dashboard.Size = new System.Drawing.Size(128, 61);
+            this.Dashboard.TabIndex = 32;
+            this.Dashboard.Text = "Back to Dashboard";
+            this.Dashboard.UseVisualStyleBackColor = true;
+            this.Dashboard.Click += new System.EventHandler(this.Dashboard_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(454, 151);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(128, 29);
+            this.button5.TabIndex = 58;
+            this.button5.Text = "Search";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(495, 104);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(50, 16);
+            this.label1.TabIndex = 57;
+            this.label1.Text = "Search";
+            // 
+            // txtsearch
+            // 
+            this.txtsearch.Location = new System.Drawing.Point(422, 123);
+            this.txtsearch.Name = "txtsearch";
+            this.txtsearch.Size = new System.Drawing.Size(199, 22);
+            this.txtsearch.TabIndex = 56;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1049, 739);
+            this.ControlBox = false;
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtsearch);
+            this.Controls.Add(this.Dashboard);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.label6);
@@ -254,6 +299,8 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form2";
             this.Text = "Product Category";
             this.Load += new System.EventHandler(this.Form2_Load);
@@ -284,5 +331,9 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtDescription;
+        private System.Windows.Forms.Button Dashboard;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtsearch;
     }
 }

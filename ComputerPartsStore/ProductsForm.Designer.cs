@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label4 = new System.Windows.Forms.Label();
             this.LoadData = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -48,6 +49,11 @@
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.txtCategoryID = new System.Windows.Forms.TextBox();
             this.txtProductName = new System.Windows.Forms.TextBox();
+            this.Dashboard = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.txtsearch = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ProductTable)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,7 +61,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Palatino Linotype", 25.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(379, 83);
+            this.label4.Location = new System.Drawing.Point(379, 24);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label4.Size = new System.Drawing.Size(291, 56);
@@ -229,11 +235,59 @@
             this.txtProductName.Size = new System.Drawing.Size(116, 22);
             this.txtProductName.TabIndex = 32;
             // 
+            // Dashboard
+            // 
+            this.Dashboard.Location = new System.Drawing.Point(892, 684);
+            this.Dashboard.Name = "Dashboard";
+            this.Dashboard.Size = new System.Drawing.Size(128, 61);
+            this.Dashboard.TabIndex = 45;
+            this.Dashboard.Text = "Back to Dashboard";
+            this.Dashboard.UseVisualStyleBackColor = true;
+            this.Dashboard.Click += new System.EventHandler(this.Dashboard_Click);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // txtsearch
+            // 
+            this.txtsearch.Location = new System.Drawing.Point(420, 101);
+            this.txtsearch.Name = "txtsearch";
+            this.txtsearch.Size = new System.Drawing.Size(199, 22);
+            this.txtsearch.TabIndex = 47;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(493, 82);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(50, 16);
+            this.label1.TabIndex = 48;
+            this.label1.Text = "Search";
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(452, 129);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(128, 29);
+            this.button5.TabIndex = 49;
+            this.button5.Text = "Search";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1032, 757);
+            this.ControlBox = false;
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtsearch);
+            this.Controls.Add(this.Dashboard);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.label6);
@@ -254,6 +308,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.ProductTable);
             this.Controls.Add(this.button1);
+            this.MinimizeBox = false;
             this.Name = "Form3";
             this.Text = "Products ";
             this.Load += new System.EventHandler(this.Form3_Load);
@@ -285,5 +340,10 @@
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.TextBox txtCategoryID;
         private System.Windows.Forms.TextBox txtProductName;
+        private System.Windows.Forms.Button Dashboard;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.TextBox txtsearch;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button5;
     }
 }

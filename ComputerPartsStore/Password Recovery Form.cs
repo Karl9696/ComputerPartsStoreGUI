@@ -36,17 +36,17 @@ namespace ComputerPartsStore
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string username = txtusername.Text.Trim();
+            string email = txtemail.Text.Trim();
             string resetCode = new Random().Next(100000, 999999).ToString();
             DateTime expiry = DateTime.Now.AddMinutes(15);
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             using (MySqlCommand cmd = new MySqlCommand(
-                "UPDATE users SET reset_code = @code, reset_code_expiry = @expiry WHERE username = @username", conn))
+                "UPDATE users SET reset_code = @code, reset_code_expiry = @expiry WHERE email = @email", conn))
             {
                 cmd.Parameters.AddWithValue("@code", resetCode);
                 cmd.Parameters.AddWithValue("@expiry", expiry);
-                cmd.Parameters.AddWithValue("@username", username);
+                cmd.Parameters.AddWithValue("@email", email);
 
                 conn.Open();
                 int rowsAffected = cmd.ExecuteNonQuery();
@@ -56,14 +56,14 @@ namespace ComputerPartsStore
                 }
                 else
                 {
-                    MessageBox.Show("Username not found.");
+                    MessageBox.Show("Email not found.");
                 }
             }
         }
 
         private void ResetPassword_Click(object sender, EventArgs e)
         {
-            string username = txtusername.Text.Trim();
+            string email = txtemail.Text.Trim();
             string code = txtresetcode.Text.Trim();
             string newPassword = txtnewpassword.Text.Trim();
             string hashedPassword = HashPassword(newPassword);
@@ -74,9 +74,9 @@ namespace ComputerPartsStore
 
                 // Check if code is valid and not expired
                 using (MySqlCommand cmd = new MySqlCommand(
-                    "SELECT reset_code_expiry FROM users WHERE username = @username AND reset_code = @code", conn))
+                    "SELECT reset_code_expiry FROM users WHERE email = @email AND reset_code = @code", conn))
                 {
-                    cmd.Parameters.AddWithValue("@username", username);
+                    cmd.Parameters.AddWithValue("@email", email);
                     cmd.Parameters.AddWithValue("@code", code);
 
                     using (MySqlDataReader reader = cmd.ExecuteReader())
@@ -90,13 +90,17 @@ namespace ComputerPartsStore
 
                                 // Update password and clear reset code
                                 using (MySqlCommand updateCmd = new MySqlCommand(
-                                    "UPDATE users SET password_hash = @password, reset_code = NULL, reset_code_expiry = NULL WHERE username = @username", conn))
+                                    "UPDATE users SET password_hash = @password, reset_code = NULL, reset_code_expiry = NULL WHERE email = @email", conn))
                                 {
                                     updateCmd.Parameters.AddWithValue("@password", hashedPassword);
-                                    updateCmd.Parameters.AddWithValue("@username", username);
+                                    updateCmd.Parameters.AddWithValue("@email", email);
                                     updateCmd.ExecuteNonQuery();
 
                                     MessageBox.Show("Password reset successful.");
+                                    this.Hide();
+
+                                    Login_Signup_Form LoginForm = new Login_Signup_Form();
+                                    LoginForm.Show();
                                     this.Hide();
                                 }
                             }
@@ -112,6 +116,13 @@ namespace ComputerPartsStore
                     }
                 }
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Login_Signup_Form LoginForm = new Login_Signup_Form();
+            LoginForm.Show();
+            this.Hide();
         }
     }
 }

@@ -259,5 +259,82 @@ namespace ComputerPartsStore
         {
             ProductTable.Rows.Clear();
         }
+
+        private void Dashboard_Click(object sender, EventArgs e)
+        {
+            Form1 NavigationForm = new Form1();
+            NavigationForm.Show();
+            this.Hide();
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            string keyword = txtsearch.Text.Trim();
+
+            if (string.IsNullOrEmpty(keyword))
+            {
+                MessageBox.Show("Please enter a keyword to search.");
+                return;
+            }
+
+            ProductTable.Rows.Clear();
+            ProductTable.Columns.Clear();
+
+            string query = "SELECT product_id, product_name, category_id, price, stock_quantity, supplier_id, description, is_active, original_price " +
+                           "FROM products " +
+                           "WHERE product_name LIKE @keyword OR description LIKE @keyword";
+
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@keyword", "%" + keyword + "%");
+
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            ProductTable.Columns.Add("product_id", "Product ID");
+                            ProductTable.Columns.Add("product_name", "Product Name");
+                            ProductTable.Columns.Add("category_id", "Category ID");
+                            ProductTable.Columns.Add("price", "Price");
+                            ProductTable.Columns.Add("stock_quantity", "Stock Quantity");
+                            ProductTable.Columns.Add("supplier_id", "Supplier ID");
+                            ProductTable.Columns.Add("description", "Description");
+                            ProductTable.Columns.Add("is_active", "Is Active");
+                            ProductTable.Columns.Add("original_price", "Original Price");
+
+                            while (reader.Read())
+                            {
+                                ProductTable.Rows.Add(
+                                    reader["product_id"].ToString(),
+                                    reader["product_name"].ToString(),
+                                    reader["category_id"].ToString(),
+                                    reader["price"].ToString(),
+                                    reader["stock_quantity"].ToString(),
+                                    reader["supplier_id"].ToString(),
+                                    reader["description"].ToString(),
+                                    reader["is_active"].ToString(),
+                                    reader["original_price"].ToString()
+                                );
+                            }
+                        }
+                    }
+                }
+
+                ProductTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error searching for products: " + ex.Message);
+            }
+        }
     }
 }

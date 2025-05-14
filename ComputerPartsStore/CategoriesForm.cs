@@ -101,11 +101,6 @@ namespace ComputerPartsStore
             dataGridView1.Rows.Clear();
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void label6_Click(object sender, EventArgs e)
         {
 
@@ -118,6 +113,18 @@ namespace ComputerPartsStore
 
         private void button1_Click(object sender, EventArgs e)
         {
+        }
+
+        private void Dashboard_Click(object sender, EventArgs e)
+        {
+            Form1 NavigationForm = new Form1();
+            NavigationForm.Show();
+            this.Hide();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

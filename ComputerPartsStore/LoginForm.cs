@@ -83,6 +83,12 @@ namespace ComputerPartsStore
         {
             Password_Recovery_Form passRecoveryForm = new Password_Recovery_Form();
             passRecoveryForm.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

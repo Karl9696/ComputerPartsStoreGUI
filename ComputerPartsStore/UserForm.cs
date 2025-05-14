@@ -110,5 +110,29 @@ namespace ComputerPartsStore
                 MessageBox.Show("Please select a user to delete.");
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string searchText = txtsearch.Text.Trim();
+            string connectionString = "server=localhost;port=3306;user=root;password=admin;database=computerparts_db;";
+            string query = "SELECT id, username, email FROM users WHERE username LIKE @search OR email LIKE @search";
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn))
+            {
+                adapter.SelectCommand.Parameters.AddWithValue("@search", "%" + searchText + "%");
+
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                UserView.DataSource = dt;
+            }
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            Form1 NavigationForm = new Form1();
+            NavigationForm.Show();
+            this.Hide();
+        }
     }
 }
