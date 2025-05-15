@@ -45,6 +45,8 @@
             this.button10 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -121,7 +123,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(174, 664);
+            this.button7.Location = new System.Drawing.Point(115, 593);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(174, 77);
             this.button7.TabIndex = 8;
@@ -135,7 +137,7 @@
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(111, 199);
+            this.pictureBox1.Location = new System.Drawing.Point(67, 227);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(290, 295);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -145,7 +147,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(477, 168);
+            this.label2.Location = new System.Drawing.Point(483, 168);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 16);
             this.label2.TabIndex = 10;
@@ -162,7 +164,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(623, 199);
+            this.button1.Location = new System.Drawing.Point(616, 199);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(154, 56);
             this.button1.TabIndex = 12;
@@ -172,7 +174,7 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(623, 282);
+            this.button8.Location = new System.Drawing.Point(616, 282);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(154, 56);
             this.button8.TabIndex = 13;
@@ -209,6 +211,26 @@
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(805, 356);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(154, 56);
+            this.button11.TabIndex = 17;
+            this.button11.Text = "Add Order";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(805, 438);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(154, 56);
+            this.button12.TabIndex = 18;
+            this.button12.Text = "Add New Product";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -217,6 +239,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(962, 753);
             this.ControlBox = false;
+            this.Controls.Add(this.button12);
+            this.Controls.Add(this.button11);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.label4);
@@ -261,6 +285,8 @@
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button12;
     }
 }
 

@@ -117,6 +117,21 @@ namespace ComputerPartsStore
             ModifyPricesForm2 ModifyPricesForm2 = new ModifyPricesForm2();
             ModifyPricesForm2.Show();
             this.Hide();
-        }   
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            AddOrders AddOrdersForm = new AddOrders();
+            AddOrdersForm.Show();
+            this.Hide();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            AddProductFormcs AddProduct = new AddProductFormcs();
+            AddProduct.Show();
+            this.Hide();
+
+        }
     }
 }

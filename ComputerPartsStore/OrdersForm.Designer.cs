@@ -152,7 +152,7 @@
             // OrderDate
             // 
             this.OrderDate.AutoSize = true;
-            this.OrderDate.Location = new System.Drawing.Point(462, 175);
+            this.OrderDate.Location = new System.Drawing.Point(459, 175);
             this.OrderDate.Name = "OrderDate";
             this.OrderDate.Size = new System.Drawing.Size(70, 16);
             this.OrderDate.TabIndex = 60;
